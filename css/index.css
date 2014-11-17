@@ -46,6 +46,6 @@ body {
     width:100%;
 }
 
-.ui-footer{
+.ui-footer .ui-navbar .ui-btn{
     font-size: 2em;
 }
