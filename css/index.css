@@ -46,6 +46,10 @@ body {
     width:100%;
 }
 
-.ui-footer .ui-navbar .ui-btn{
+.ui-header .ui-title{
+    font-size: 1.5em;
+    margin: .6em 25% .8em
+}
+.ui-footer .ui-btn-inner, .ui-mini .ui-btn-inner{
     font-size: 2em;
 }
