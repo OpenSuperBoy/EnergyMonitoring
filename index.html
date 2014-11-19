@@ -32,6 +32,7 @@
         <script src="js/jquery.mmenu.min.js" type="text/javascript"></script>
         <link href="css/jquery.mmenu.css" type="text/css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="http://cdn.hcharts.cn/highcharts/4.0.3/highcharts.js"></script>
         <script type="text/javascript">
             $(function() {
                 $('nav#menu').mmenu();
@@ -87,29 +88,30 @@
                     </nav>
                 </div><!--end of the wrapper-->
                 <div > 
-                  <div style="text-align:center"><img src="img/fdc.jpg" /></div>
-                  <table align="center">
-                  <tr>
-                  <td style="float:right"><strong>目前能耗在线监测企业数量：</strong></td><td><strong>10家</strong></td>
-                  </tr> 
-                  <tr>              
-                  <td style="float:right"><strong>10家企业能耗占宁波市能耗：</strong></td><td><strong>10%</strong></td>
-                  </tr>
-                  <tr>
-                  <td style="float:right"><strong>10家企业总综合能耗为：</strong></td><td><strong>432.58万吨标煤</strong></td>
-                  </tr> 
-                  <tr>
-                  <td style="float:right"><strong>10家企业总综合能耗上年同比：</strong></td><td><strong>452.99万吨标煤</strong></td>
-                  </tr>
-                  <tr>
-                  <td style="float:right"><strong>宁波市总综合能耗为：</strong></td><td><strong>4325.81万吨标煤</strong></td>
-                  </tr>
-                  <tr>
-                  <td style="float:right"><strong>宁波市总综合能耗上年同比：</strong></td><td><strong>4529.91万吨标煤</strong></td>
-                  </tr>
-                  </table>
-             </div>
+                    <div style="text-align:center"><img src="img/fdc.jpg" /></div>
+                    <table align="center">
+                    <tr>
+                    <td style="float:right"><strong>目前能耗在线监测企业数量：</strong></td><td><strong>10家</strong></td>
+                    </tr> 
+                    <tr>              
+                    <td style="float:right"><strong>10家企业能耗占宁波市能耗：</strong></td><td><strong>10%</strong></td>
+                    </tr>
+                    <tr>
+                    <td style="float:right"><strong>10家企业总综合能耗为：</strong></td><td><strong>432.58万吨标煤</strong></td>
+                    </tr> 
+                    <tr>
+                    <td style="float:right"><strong>10家企业总综合能耗上年同比：</strong></td><td><strong>452.99万吨标煤</strong></td>
+                    </tr>
+                    <tr>
+                    <td style="float:right"><strong>宁波市总综合能耗为：</strong></td><td><strong>4325.81万吨标煤</strong></td>
+                    </tr>
+                    <tr>
+                    <td style="float:right"><strong>宁波市总综合能耗上年同比：</strong></td><td><strong>4529.91万吨标煤</strong></td>
+                    </tr>
+                    </table>
+                </div>
             </div>
+            <div id="container-histogram" ></div>
             <footer data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
@@ -143,6 +145,64 @@
                 <h4>日视图页脚</h4>
             </div><!-- /footer -->
         </div><!-- /page -->
+        <script>
+            $('#container-histogram').highcharts({
+                    chart: {
+                        type: 'column',
+                        margin: [50, 50, 100, 80]
+                    },
+                    title: {
+                        text: '各行业总综合能耗'
+                    },
+                    xAxis: {
+                        categories: [
+                            '电力热力生产及供应业',
+                            '黑色金属冶炼及压延加工业',
+                            '造纸及纸制品业',
+                            '金属船舶制造业',
+                            '石油加工业',
+                            '化学纤维制造业'
 
+                        ],
+                        labels: {
+                            rotation: -45,
+                            align: 'right',
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: '单位：万吨标煤'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: '总综合能耗: <b>{point.y:.1f} 万吨标煤</b>',
+                    },
+                    series: [{
+                        name: 'Population',
+                        data: [277.46, 125.82, 18.02, 0.39, 8.82, 2.07],
+                        dataLabels: {
+                            enabled: true,
+                            rotation: -90,
+                            color: '#FFFFFF',
+                            align: 'right',
+                            x: 4,
+                            y: 10,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif',
+                                textShadow: '0 0 3px black'
+                            }
+                        }
+                    }]
+            });
+        </script>
     </body>
 </html>
