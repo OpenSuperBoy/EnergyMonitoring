@@ -25,17 +25,19 @@
     background-image: url( data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC );
 
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
     top: 0;
     left: 10px;
 }
+/*
 body .ui-content{
     background-image:url(../img/background.jpg) ;
     background-size:cover ;
     background-attachment:fixed
 }
-
+*/
 .ui-header .ui-title{
     font-size: 1.5em;
     margin: .6em 25% .8em
