@@ -32,6 +32,10 @@
     top: 0;
     left: 0px;
 }
+.mm-list > li > a
+{
+    font-size: 2.5em;
+}
 /*
 body .ui-content{
     background-image:url(../img/background.jpg) ;
